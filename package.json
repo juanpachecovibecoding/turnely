@@ -1,0 +1,32 @@
+{
+  "name": "turnely",
+  "version": "1.0.0",
+  "description": "Plataforma integral para consultorio odontológico: Landing page, agenda online, panel admin, WhatsApp con QR y bot de IA con Google Gemini.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "gemini",
+    "dental-clinic",
+    "turnos",
+    "render",
+    "booking"
+  ],
+  "author": "juanpachecovibecoding",
+  "license": "MIT",
+  "dependencies": {
+    "@google/genai": "^2.24.0",
+    "@whiskeysockets/baileys": "^6.7.24",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "pino": "^9.6.0",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.8.1"
+  }
+}
