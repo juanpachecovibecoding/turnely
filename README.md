@@ -39,33 +39,25 @@
 
 ---
 
-## 🚀 Despliegue en Render (Capa Gratuita)
+## 🚀 Despliegue en Railway (Recomendado)
 
-### Paso 1: Crear Servicio Web en Render
-1. Ve a [Render Dashboard](https://dashboard.render.com/) e inicia sesión.
-2. Haz clic en **New +** y selecciona **Web Service**.
-3. Conecta este repositorio de GitHub: `juanpachecovibecoding/turnely`.
-4. Completa la configuración básica:
-   * **Name:** `turnely-odontologia` (o el nombre que elijas)
-   * **Region:** Ohio (US East) o Frankfurt
-   * **Branch:** `main`
-   * **Runtime:** `Node`
-   * **Build Command:** `npm install`
-   * **Start Command:** `npm start`
-   * **Instance Type:** `Free`
+Railway es la plataforma preferida para bots de WhatsApp con **Baileys**, ya que soporta WebSockets continuos, no requiere trucos para no dormirse y construye usando el `Dockerfile` optimizado con Node 20.
 
-### Paso 2: Variables de Entorno (Environment Variables)
-En la sección **Environment Variables** de Render, añade:
-
-| Variable | Valor / Descripción |
-| :--- | :--- |
-| `NODE_VERSION` | `20.10.0` |
-| `ADMIN_PIN` | `1234` (O el PIN seguro que prefieras) |
-| `GEMINI_API_KEY` | Tu API Key gratuita de [Google AI Studio](https://aistudio.google.com/app/apikey) |
-| `APP_URL` | La URL que te asigne Render (ej: `https://turnely-odontologia.onrender.com`) |
-| `DATABASE_URL` | *(Opcional)* Conexión PostgreSQL (Supabase / Neon) para persistencia total. |
+### Pasos en Railway:
+1. Entra a [Railway.com](https://railway.com/) e inicia sesión con tu cuenta de GitHub.
+2. Haz clic en **+ New Project** y selecciona **Deploy from GitHub repo**.
+3. Selecciona tu repositorio: `juanpachecovibecoding/turnely`.
+4. Railway detectará automáticamente el `Dockerfile` y empezará a compilar.
+5. Ve a la pestaña **Variables** del servicio y añade:
+   * `ADMIN_PIN`: `1234` (O el PIN de tu preferencia)
+   * `GEMINI_API_KEY`: Tu clave gratuita de [Google AI Studio](https://aistudio.google.com/app/apikey)
+   * `PORT`: `3000`
+6. En la pestaña **Settings** > **Networking**, haz clic en **Generate Domain** para obtener tu URL pública (ej: `https://turnely-production.up.railway.app`).
+7. *(Opcional)* En el mismo proyecto, haz clic en **+ New** > **Database** > **PostgreSQL**. Railway inyectará automáticamente la variable `DATABASE_URL` para que las credenciales de WhatsApp y las citas queden 100% respaldadas.
 
 ---
+
+## 🚀 Despliegue en Render
 
 ## 💡 Consejos Críticos para la Capa Gratuita
 
